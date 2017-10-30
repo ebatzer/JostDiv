@@ -7,9 +7,9 @@
 #' jost_output()
 
 jost_output <- setClass("jost.output",
-                        slots = c(summary = "numeric",
+                        slots = c(summary = "list",
                                   weights = "numeric",
-                                  spec.freq = "numeric",
+                                  spec.freq = "data.frame",
                                   boot = "logical",
                                   boot.output = "list"))
 
