@@ -12,8 +12,12 @@ jost_d <- function(q = 1, # Q-value to evaluate diversity with
                    boot = FALSE, # Whether to bootstrap
                    n.sim = NULL){ # Arguments passed to boostrap
 
-  if(!as.numeric(q) | q <= 0 | q >= 2){
-    stop("Error: q must be a numeric value between 0 and 2")
+  if(!is.numeric(q)){
+    stop("Error: q must be a numeric value")
+  }
+  
+  if(q > 2 | q < 0){
+    stop("Error: q is bounded between 0 and 2")
   }
 
   if(weighted == FALSE){
