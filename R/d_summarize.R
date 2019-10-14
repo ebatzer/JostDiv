@@ -14,7 +14,7 @@ d_summarize <- function(com.matrix, q, sample.weight){
   # Calculating gamma diversity
   gamma.matrix <- com.matrix * sample.weight
   gamma.matrix <- colSums(com.matrix) / sum(colSums(com.matrix))
-  gamma.div <- d_calc(gamma.matrix, q = q, sample.weight = 1)
+  gamma.div <- d_calc(gamma.matrix, q = q, sample.weight = sum(sample.weight))
 
   # Calculating additive beta diversity
   beta.div <- gamma.div / alpha.div
